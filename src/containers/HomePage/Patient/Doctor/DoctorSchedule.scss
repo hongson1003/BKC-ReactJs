@@ -1,0 +1,22 @@
+.doctor-schedule-container {
+    margin-top: 30px;
+
+    .booking-calendar {
+        display: flex;
+        .schedules-main{
+            width: 60%;
+            border-right: 1px solid grey;
+        }
+        .calendar-info {
+            width: 40%;
+            padding-top: 20px;
+            padding-left: 20px;
+
+            .address {
+                color: #666;
+                font-size: 15px;
+                font-weight: 600;
+            }
+        }
+    }
+}
