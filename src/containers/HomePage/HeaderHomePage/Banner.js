@@ -9,6 +9,8 @@ import Search from "../../../components/Search/Search";
 import unidecode from 'unidecode';
 import { path } from "../../../utils";
 import { withRouter } from "react-router";
+
+
 class Banner extends React.Component {
     constructor(props) {
         super(props);

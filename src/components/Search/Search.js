@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Search.scss';
 import { LANGUAGES } from '../../utils';
+import { withRouter } from "react-router";
+
+
 
 class Search extends Component {
     constructor(props) {
@@ -37,7 +40,9 @@ class Search extends Component {
                                     arr.map(item => (
                                         <div style={{ height: `${this.props.heighLine}` }} key={item.id}>
                                             <img alt='' src={new Buffer(item.image, 'base64').toString('binary')} />
-                                            <a href={'/specialty/' + item.id}>{item.name}</a>
+                                            <p style={{ cursor: 'pointer' }} onClick={() => {
+                                                this.props.history.push('/specialty/' + item.id);
+                                            }}>{item.name}</p>
                                         </div>
                                     ))
                                 }
@@ -62,4 +67,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Search);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Search));

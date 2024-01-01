@@ -16,7 +16,6 @@ class MedicalFacility extends React.Component {
     }
     handleGetAllClinics = async () => {
         let response = await getAllClinics('ALL');
-        console.log(response)
         if (response.errCode === 0) {
             this.setState({
                 clinics: response.data,
